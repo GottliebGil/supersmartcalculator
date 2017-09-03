@@ -72,9 +72,14 @@ def get_first_numbers(val):
 
 
 def get_next_action(val):
-    to_return = {}
+    to_return = {
+        'b': '',
+        'action': '',
+        'a': ''
+    }
     count_start = 0
     count_symbol = 0
+    
     if strongest_action(val) == -1:
         to_return['b'] = val
         to_return['action'] = ''
@@ -103,9 +108,7 @@ def replace_action(val, action):
     return val
 
 
-def main():
-    val = '5+4-18'
-    val = delete_spaces(val)
+def calculate_block(val):
     next = get_next_action(val)
     while next['action'] != '':
         print 'next action is %s ' % next
@@ -113,7 +116,15 @@ def main():
         print 'current val is %s ' % val
         next = get_next_action(val)
         print '-------------'
-    print 'result is %s ' % next['b']
+    return next['b']
+
+def main():
+    val = raw_input("Enter ")
+    # val = '5+4-18'
+    val = delete_spaces(val)
+    result = calculate_block(val)
+    print 'result is %s ' % result
+    main()
 
 
 main()
