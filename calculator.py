@@ -1,4 +1,6 @@
 import math
+
+
 actions = {
     '+': 1,
     '-': 1,
@@ -142,11 +144,11 @@ def calculate_block(val):
         block = get_block(val)
     next = get_next_action(val)
     while next['action'] != '':
-        print 'next action is %s ' % next
+        # print 'next action is %s ' % next
         val = replace_action(val, next)
-        print 'current val is %s ' % val
+        # print 'current val is %s ' % val
         next = get_next_action(val)
-        print '-------------'
+        # print '-------------'
     return next['b']
 
 
@@ -165,12 +167,9 @@ def get_block(val):
     return ''
 
 
-def main():
-    val = raw_input("Enter ")
+def main(val):
+    val = val
     val = delete_spaces(val)
     result = calculate_block(val)
-    print 'result is %s ' % result
-    main()
-
-
-main()
+    # print 'result is %s ' % result
+    return result
