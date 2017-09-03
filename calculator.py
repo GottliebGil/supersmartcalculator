@@ -15,6 +15,7 @@ actions = {
 }
 one_parameter_actions = ['!']
 
+
 def perform_action(val):
     """Receives an action type (two parts and an action) and performs an action on it"""
     if val['a'] == '' and val['action'] == '-':
