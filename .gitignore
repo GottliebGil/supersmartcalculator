@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Git stuff
+.git/
+
+# Webstorm stuff
+.idea/
