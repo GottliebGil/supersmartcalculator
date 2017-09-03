@@ -11,6 +11,7 @@ actions = {
     '&': 5
 }
 
+
 def perform_action(val):
     if val['a'] == '' and val['action'] == '-':
         val['action'] = ''
@@ -112,10 +113,7 @@ def main():
         print 'current val is %s ' % val
         next = get_next_action(val)
         print '-------------'
-
-
     print 'result is %s ' % next['b']
-
 
 
 main()
