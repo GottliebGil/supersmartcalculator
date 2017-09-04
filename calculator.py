@@ -33,13 +33,24 @@ def perform_action(val):
             '!': math.factorial(a)  # TODO
         }[val['action']]
     else:
-        return {
+        if b != 0:
+            return {
             '+': a + b,
             '-': a - b,
             '*': a * b,
             '/': a / b,
             '^': a ** b,
             '%': a % b,
+            '@': (a + b) / 2,
+            '$': max(a, b),
+            '&': min(a, b)
+        }[val['action']]
+        if b == 0:
+            return {
+            '+': a + b,
+            '-': a - b,
+            '*': a * b,
+            '^': a ** b,
             '@': (a + b) / 2,
             '$': max(a, b),
             '&': min(a, b)
