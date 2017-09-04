@@ -38,6 +38,12 @@ class CalculatorTests(unittest.TestCase):
         res = calculator.main(arg)
         res = float(res)
         self.failUnlessEqual(res, 24)
+    
+    def test_tons_of_stuff(self):
+        arg = '(5*(2+4)-9*5*2*(-1))+10'
+        res = calculator.main(arg)
+        res = float(res)
+        self.failUnlessEqual(res, 130)
 
 
 def main():
